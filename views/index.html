@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>Flavour Paradize - Bootstrap Restaurant Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -32,10 +32,23 @@
 
     <!-- Template Stylesheet -->
     <link href="../static/css/style.css" rel="stylesheet">
+
+
+    <script>
+        function validateForm() {
+            x = document.forms["myForm"]["Contact_Number"].value;
+            if (x < 1000000000 || x > 10000000000) {
+                alert("Contact number should be 10 digit only");
+                return false;
+            }
+            alert("form is submitted successfully");
+            return true;
+        }
+    </script>
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
+    <div class="w-100 bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -47,10 +60,10 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class="w-100 position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Flavour Paradize</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,25 +71,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index" class="nav-item nav-link active">Home</a>
-                        <a href="about" class="nav-item nav-link">About</a>
-                        <a href="service" class="nav-item nav-link">Service</a>
-                        <a href="menu" class="nav-item nav-link">Menu</a>
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="booking" class="dropdown-item">Booking</a>
-                                <a href="team" class="dropdown-item">Our Team</a>
-                                <a href="testimonial" class="dropdown-item">Testimonial</a>
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
                         <a href="contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="" class="btn btn-primary py-2 px-4">Book A Table</a>
+                    <a href="booking" class="btn btn-primary py-2 px-4">Book A Table</a>
                 </div>
             </nav>
 
-            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+            <div class="w-100 py-5 bg-dark hero-header mb-5">
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
@@ -84,11 +97,11 @@
                             <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam
                                 dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
                                 stet lorem sit clita duo justo magna dolore erat amet</p>
-                            <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
+                            <a href="booking" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
                                 Table</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" src="../static/img/hero.png" alt="">
+                            <img class="img-fluid" src="../static/img/chicken thali.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -98,7 +111,7 @@
 
 
         <!-- Service Start -->
-        <div class="container-xxl py-5">
+        <div class="w-100 py-5">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -144,7 +157,7 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
+        <div class="w-100 py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
@@ -169,7 +182,8 @@
                     </div>
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                        <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Restoran</h1>
+                        <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Flavour Paradize
+                        </h1>
                         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
                             diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
                         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
@@ -206,7 +220,7 @@
 
 
         <!-- Menu Start -->
-        <div class="container-xxl py-5">
+        <div class="w-100 py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
@@ -602,7 +616,7 @@
 
 
         <!-- Reservation Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="w-100 py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="video">
@@ -616,31 +630,65 @@
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
                         <h1 class="text-white mb-4">Book A Table Online</h1>
-                        <form>
+                        <form id="userform" name="myForm" action="" onsubmit="return validateForm()" method="post"
+                            aria-required="true">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                            name="Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                            name="Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime"
-                                            placeholder="Date & Time" data-target="#date3"
-                                            data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <input type="date" class="form-control" id="datetime" placeholder="Date & Time"
+                                            data-target="#date3" name="Date" required />
+                                        <label for="datetime">Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating" id="date3" data-target-input="nearest">
+                                        <select class="form-select" type="time" id="Time" placeholder="Booking Time"
+                                            name="Time" required>
+                                            <option value="9:00">9:00 AM</option>
+                                            <option value="9:30">9:30 AM</option>
+                                            <option value="10:00">10:00 AM</option>
+                                            <option value="10:30">10:30 AM</option>
+                                            <option value="11:00">11:00 AM</option>
+                                            <option value="11:30">11:30 AM</option>
+                                            <option value="12:00">12:00 PM</option>
+                                            <option value="12:30">12:30 PM</option>
+                                            <option value="13:00">1:00 PM</option>
+                                            <option value="13:30">1:30 PM</option>
+                                            <option value="14:00">2:00 PM</option>
+                                            <option value="14:30">2:30 PM</option>
+                                            <option value="15:00">3:00 PM</option>
+                                            <option value="15:30">3:30 PM</option>
+                                            <option value="16:00">4:00 PM</option>
+                                            <option value="16:30">4:30 PM</option>
+                                            <option value="17:00">5:00 PM</option>
+                                            <option value="17:30">5:30 PM</option>
+                                            <option value="18:00">6:00 PM</option>
+                                            <option value="18:30">6:30 PM</option>
+                                            <option value="19:00">7:00 PM</option>
+                                            <option value="19:30">7:30 PM</option>
+                                            <option value="20:00">8:00 PM</option>
+                                            <option value="20:30">8:30 PM</option>
+                                        </select>
+                                        <label for="Time">Time</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="select1">
+                                        <select class="form-select" id="select1" name="Number_of_people" required>
                                             <option value="1">People 1</option>
                                             <option value="2">People 2</option>
                                             <option value="3">People 3</option>
@@ -648,15 +696,23 @@
                                         <label for="select1">No Of People</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="contact_number"
+                                            name="Contact_number" placeholder="Enter contact number" required>
+                                        <label for="contact_number">Contact</label>
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Special Request" id="message"
-                                            style="height: 100px"></textarea>
+                                            style="height: 100px" name="Special_request" required></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                    <input class="btn btn-primary w-100 py-3" type="submit" value="Submit"
+                                        id="submitForm" name="Submit">
                                 </div>
                             </div>
                         </form>
@@ -686,7 +742,7 @@
 
 
         <!-- Team Start -->
-        <div class="container-xxl pt-5 pb-3">
+        <div class="w-100 pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
@@ -756,7 +812,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="w-100 py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">
                 <div class="text-center">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
@@ -908,6 +964,6 @@
 
     <!-- Template Javascript -->
     <script src="../static/js/main.js"></script>
-</body>
+    <script src="../app.js"></script>
 
 </html>

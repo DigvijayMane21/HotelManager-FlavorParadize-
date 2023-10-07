@@ -5,7 +5,7 @@ const express = require("express");
 // const session = require('express-session')
 const bodyParser = require('body-parser')
 const mysql = require('mysql2');
-const mongoose = require('mongoose')
+//const mongoose = require('mongoose')
 
 const app = express();
 const port = 8080;
@@ -30,7 +30,7 @@ app.use(bodyParser.json())
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'Digvijay19$',
     database: 'hotel_management'
 });
 
@@ -163,10 +163,10 @@ app.post('/contact', (req, res) => {
     });
 });
 app.post('/booking', (req, res) => {
-    const { Name, Email, Date, Number_of_people, Special_request } = req.body;
+    const { Name, Email, Date, Time, Number_of_people, Contact_number, Special_request } = req.body;
 
-    const sql = 'INSERT INTO booking (name, email, Date, Number_of_people, Special_request) VALUES (?,?,?,?,?)';
-    const values = [Name, Email, Date, Number_of_people, Special_request];
+    const sql = 'INSERT INTO booking (name, email, Date,Time, Number_of_people,Contact_number, Special_request) VALUES (?,?,?,?,?,?,?)';
+    const values = [Name, Email, Date, Time, Number_of_people, Contact_number, Special_request];
 
     connection.query(sql, values, (error, results) => {
         if (error) {
@@ -177,10 +177,10 @@ app.post('/booking', (req, res) => {
     });
 });
 app.post('/index', (req, res) => {
-    const { Name, Email, Date, Number_of_people, Special_request } = req.body;
+    const { Name, Email, Date, Time, Number_of_people, Contact_number, Special_request } = req.body;
 
-    const sql = 'INSERT INTO booking (name, email, Date, Number_of_people, Special_request) VALUES (?,?,?,?,?)';
-    const values = [Name, Email, Date, Number_of_people, Special_request];
+    const sql = 'INSERT INTO booking (name, email, Date,Time, Number_of_people,Contact_number, Special_request) VALUES (?,?,?,?,?,?,?)';
+    const values = [Name, Email, Date, Time, Number_of_people, Contact_number, Special_request];
 
     connection.query(sql, values, (error, results) => {
         if (error) {
@@ -193,7 +193,7 @@ app.post('/index', (req, res) => {
 app.post('/', (req, res) => {
     const { Name, Email, Date, Time, Number_of_people, Contact_number, Special_request } = req.body;
 
-    const sql = 'INSERT INTO user_booking (name, email, Date,Time, Number_of_people,Contact_number, Special_request) VALUES (?,?,?,?,?,?,?)';
+    const sql = 'INSERT INTO booking (name, email, Date,Time, Number_of_people,Contact_number, Special_request) VALUES (?,?,?,?,?,?,?)';
     const values = [Name, Email, Date, Time, Number_of_people, Contact_number, Special_request];
 
     connection.query(sql, values, (error, results) => {

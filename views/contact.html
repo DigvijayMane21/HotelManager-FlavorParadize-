@@ -32,6 +32,23 @@
 
     <!-- Template Stylesheet -->
     <link href="../static/css/style.css" rel="stylesheet">
+
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["Contact_number"].value;
+            let y = document.forms["myForm"]['Date'].value;
+            if (x < 1000000000 || x > 10000000000) {
+                alert("Contact number should be 10 digit only");
+                return false;
+            }
+            $('#datetimepicker').datetimepicker({
+                format: 'DD/MM/YYYY HH:mm',
+                minDate: new Date()
+            });
+            alert("form is submitted successfully")
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -50,7 +67,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Flavour Paradize</h1>
                     <!-- <img src="../static/img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,7 +75,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index" class="nav-item nav-link">Home</a>
+                        <a href="/" class="nav-item nav-link">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
                         <a href="service" class="nav-item nav-link">Service</a>
                         <a href="menu" class="nav-item nav-link">Menu</a>
@@ -72,7 +89,7 @@
                         </div>
                         <a href="contact" class="nav-item nav-link active">Contact</a>
                     </div>
-                    <a href="" class="btn btn-primary py-2 px-4">Book A Table</a>
+                    <a href="booking" class="btn btn-primary py-2 px-4">Book A Table</a>
                 </div>
             </nav>
 
@@ -143,7 +160,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" id="Contact_number"
+                                            <input type="number" class="form-control" id="contact_number"
                                                 name="Contact_number" placeholder="Enter contact number" required>
                                             <label for="Contact_number">Contact</label>
                                         </div>
@@ -156,7 +173,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <input class="btn btn-primary w-100 py-3" type="submit">
+                                        <input class="btn btn-primary w-100 py-3" type="submit" value="Submit"
+                                            id="submitForm" name="Submit">
                                     </div>
                                 </div>
                             </form>
@@ -182,9 +200,15 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a target="_blank"
+                                href="https://www.google.com/maps/place/Babay+apartment/@18.6539575,73.761308,19.06z/data=!4m21!1m14!4m13!1m4!2m2!1d73.7623392!2d18.6524945!4e1!1m6!1m2!1s0x3bc2b96be271d43f:0x8704e5c8e5316fd5!2sBabay+apartment,+sec+24,+Pradhikaran,+Nigdi,+Pimpri-Chinchwad,+Maharashtra+411044!2m2!1d73.7616012!2d18.6544655!3e2!3m5!1s0x3bc2b96be271d43f:0x8704e5c8e5316fd5!8m2!3d18.6544655!4d73.7616012!16s%2Fg%2F11mvmwdvb9?entry=ttu">Ramananda
+                                Apartment,Akurdi,Pune,Maharashtra
+                                Peth, Pune, Maharashtra</a>
+                        </p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i><a target="_blank"
+                                href="mailto:flavourparadize@gmail.com?subject=Have a complaint">flavourparadize@gmail.com</a>
+                        </p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -256,6 +280,15 @@
     <!-- Template Javascript -->
     <script src="../static/js/main.js"></script>
     <script src="../app.js"></script>
+    {{!--
+    <script>
+        $("#submitForm").click(function () {
+            let x = document.forms["myForm"]["Contact_number"].value;
+            console.log(x);
+            if (x > 1000000000 && x < 10000000000)
+                alert("The Form has been Submitted.");
+        });
+    </script> --}}
     <!-- <script>
         document.getElementById('userform').addEventListener('submit', async function (event) {
             event.preventDefault();

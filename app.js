@@ -147,7 +147,7 @@ app.get("/testimonial", (req, res) => {
 app.post('/contact', (req, res) => {
     const { Name, Email, Contact_number, Address } = req.body;
 
-    const sql = 'INSERT INTO booking (name, email,Contact_number,Address) VALUES (?,?,?,?)';
+    const sql = 'INSERT INTO contact (name, email,Contact_number,Address) VALUES (?,?,?,?)';
     const values = [Name, Email, Contact_number, Address];
 
     connection.query(sql, values, (error, results) => {
@@ -174,20 +174,6 @@ app.post('/booking', (req, res) => {
             return results;
         }
         return res.redirect('/booking');
-    });
-});
-app.post('/index', (req, res) => {
-    const { Name, Email, Date, Time, Number_of_people, Contact_number, Special_request } = req.body;
-
-    const sql = 'INSERT INTO booking (name, email, Date,Time, Number_of_people,Contact_number, Special_request) VALUES (?,?,?,?,?,?,?)';
-    const values = [Name, Email, Date, Time, Number_of_people, Contact_number, Special_request];
-
-    connection.query(sql, values, (error, results) => {
-        if (error) {
-            console.error('Error inserting data:', error);
-            return results;
-        }
-        return res.redirect('/index');
     });
 });
 app.post('/', (req, res) => {
